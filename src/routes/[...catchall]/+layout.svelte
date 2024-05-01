@@ -1,6 +1,19 @@
 <script lang="ts">
 import "../../app.css";
 
+// 
+
+type LayoutContent = {
+    data: {
+        logo: string;
+        // Add more properties if needed
+    };
+}; 
+
+export let data: LayoutContent;
+console.log( '+layout.svelte - content ', data );
+
+
 </script>
 
 <header>
