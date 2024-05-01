@@ -1,8 +1,22 @@
 <script lang="ts">
   import { isPreviewing, Content } from "@builder.io/sdk-svelte";
   import NotFound from './404.svelte';
-  import { CUSTOM_COMPONENTS } from "$lib/components/BuilderComponentArray";
-  import SEO from '$lib/components/SEO.svelte';
+  import HelloWorld from "$lib/components/HelloWorld.svelte";
+
+  const CUSTOM_COMPONENTS = [
+    {
+      component: HelloWorld,
+      name: 'Hello World',
+      inputs: [
+        {
+          name: 'text',
+          type: 'string',
+          defaultValue: 'World',
+        },
+      ],
+    },
+  ]
+
 
   export let data: Content;
   
