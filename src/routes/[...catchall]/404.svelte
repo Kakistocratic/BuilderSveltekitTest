@@ -5,7 +5,7 @@
         <h1 class="mt-8 text-4xl font-extrabold text-theme-blue tracking-tight sm:text-5xl">Whops! It doesn't appear to be anything here.</h1>
         <p class="mt-2 text-2xl font-medium text-grabla "></p>
         <div class="mt-8 lg:mt-12">
-            <a href="/" class="btn-secondary">Frontpage</a>
+            <a href="/" class="btn-secondary">Back home</a>
         </div>
     </div>
     
