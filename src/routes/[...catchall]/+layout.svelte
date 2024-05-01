@@ -18,7 +18,7 @@ console.log( '+layout.svelte - content ', data );
 
 <header>
     <div class="w-full shadow grid-cols-3">
-        <a class="pl-5" href="/"><h1>Logo</h1></a>
+        <a class="pl-5" href="/"><h1>{data.data.logo}</h1></a>
     </div>    
 </header>
 
