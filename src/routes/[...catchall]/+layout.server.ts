@@ -1,24 +1,34 @@
+/* import { fetchOneEntry } from '@builder.io/sdk-svelte';
 
-import { fetchEntries } from '@builder.io/sdk-svelte';
+type GlobalContentData = Awaited<ReturnType<typeof fetchOneEntry>>;
 
-type LayoutContent = Awaited<ReturnType<typeof fetchEntries>>;
+async function load(): Promise<{ navigationLinks: string[]; siteLogo: string } | { status: number }> {
+  // Fetch Builder content
+  const globalContentResponse = await fetchOneEntry({
+    model: 'global-settings-and-content',
+    apiKey: "bfef1e6901994b58af9dc96e1cc8ab93",
+    options: {
+      fields: 'data.navigationLinks,data.siteLogo'
+    }
+  });
 
-async function load(): Promise<{ layoutContent: LayoutContent } | { status: number }> {
+  if (!globalContentResponse || !globalContentResponse.data?.globalSettingsAndContent?.length) {
+    // Handle potential errors or empty data gracefully (optional)
+    return { status: 500 }; // Or throw an error if preferred
+  }
 
-    // Fetch Builder content
-    const layoutContent = await fetchEntries({
-        model: 'global-content',
-        apiKey: "bfef1e6901994b58af9dc96e1cc8ab93",
-        options: {
-          fields: 'data.logo'
-          
-        }
-      });
-      console.log( '+layout.server.ts - layoutContent', layoutContent );
-    // If content doesn't exist or is null, return a 404 status
-    return layoutContent ? { layoutContent } : { status: 404 };
-    
+  const contentData = globalContentResponse.data.globalSettingsAndContent[0].content.data;
+
+  // Extract desired properties using destructuring and type assertions
+  const { navigationLinks = [], siteLogo = '' } = contentData as { navigationLinks: string[]; siteLogo: string };
+
+  return {
+    navigationLinks,
+    siteLogo
+  };
 }
 
-export type { LayoutContent };
+export type { GlobalContentData };
 export { load };
+
+*/

@@ -34,7 +34,6 @@
         model="page"
         content={data.content}
         apiKey="bfef1e6901994b58af9dc96e1cc8ab93"
-        enrich={true}
         customComponents={CUSTOM_COMPONENTS}
       />
     {:else}
