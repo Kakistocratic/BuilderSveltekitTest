@@ -1,9 +1,9 @@
 <script lang="ts">
+import type { LayoutData } from "../$types";
 import "../../app.css";
-import type { GlobalContentData } from "./+layout.server";
 
 
-export let data
+export let data : LayoutData
 console.log( '+layout.svelte - content ', data );
 
 
