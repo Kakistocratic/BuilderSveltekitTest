@@ -17,7 +17,7 @@ async function load(event: { url: URL }): Promise<{ content: Content } | { statu
     }
   });
   console.log('+page.server.ts - type of fetched content', typeof content)
-  return content ? { content } : { status: 404 };
+  return { content };
 
   
 

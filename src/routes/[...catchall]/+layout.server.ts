@@ -1,4 +1,4 @@
-/* import { fetchOneEntry } from '@builder.io/sdk-svelte';
+import { fetchOneEntry } from '@builder.io/sdk-svelte';
 
 type GlobalContentData = Awaited<ReturnType<typeof fetchOneEntry>>;
 
@@ -30,5 +30,3 @@ async function load(): Promise<{ navigationLinks: string[]; siteLogo: string } |
 
 export type { GlobalContentData };
 export { load };
-
-*/
