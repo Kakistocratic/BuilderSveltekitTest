@@ -5,10 +5,10 @@ interface NavigationLink {
     navigationLinkUrl: string;
 }
 
-interface GlobalContentData {
+interface LayoutData {
     navigationLinks: NavigationLink[];
     siteLogo: string;
     // Add other properties here if needed
 }
 
-export type { GlobalContentData, NavigationLink }
+export type { LayoutData, NavigationLink }

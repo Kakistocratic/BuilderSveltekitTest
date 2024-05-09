@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { LayoutData } from "../$types";
+import type { LayoutData } from "$lib/types/global-content-types";
 import "../../app.css";
 
 
